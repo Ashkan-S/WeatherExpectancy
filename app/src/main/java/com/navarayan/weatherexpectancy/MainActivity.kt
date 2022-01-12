@@ -28,15 +28,17 @@ class MainActivity : AppCompatActivity() {
         getLocation()
 
         binding.buttonStart.setOnClickListener {
-//            viewModel.onStartClicked("Tehran")
+            viewModel.onStartClicked("Tehran")
+/*
             if((latitude != null) && (longitude != null)) {
                 viewModel.onStartClicked(latitude!!, longitude!!)
+*/
                 viewModel.liveDataForWeatherResult.observe(
                     this,
                     {
                         binding.mainText.text = it.main.temp.toString() + " C " + it.name.toString()
                     })
-            }
+
         }
     }
 
