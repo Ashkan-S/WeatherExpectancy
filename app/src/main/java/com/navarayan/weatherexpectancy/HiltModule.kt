@@ -21,7 +21,7 @@ object HiltModule {
 
     @Provides
     fun retrofitProvider(): RetrofitInterfaceClass {
-        val baseURL = "http://api.openweathermap.org/data/2.5/weather"
+        val baseURL = "https://api.openweathermap.org/"
 
         val retrofit =
             Retrofit.Builder().baseUrl(baseURL).addConverterFactory(MoshiConverterFactory.create())
