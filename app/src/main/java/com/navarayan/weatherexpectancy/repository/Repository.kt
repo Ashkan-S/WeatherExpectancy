@@ -12,7 +12,11 @@ class Repository @Inject constructor(
     private val network: RetrofitInterfaceClass
 ) {
     suspend fun searchWeatherByCityName(cityName: String): OpenWeatherResult {
-        return network.searchWeatherByCityName(cityName, APP_ID)
+        return network.searchWeatherByCityName(cityName, APP_ID, "metric")
+    }
+
+    suspend fun searchWeatherByCoordinate(latitude: Double, longitude: Double): OpenWeatherResult {
+        return network.searchWeatherByCoordinate(latitude, longitude, APP_ID, "metric")
     }
 
 }

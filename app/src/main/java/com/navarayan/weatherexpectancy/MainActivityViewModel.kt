@@ -14,9 +14,14 @@ import javax.inject.Inject
 class MainActivityViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
     val liveDataForWeatherResult = MutableLiveData<OpenWeatherResult>()
 
-    fun onStartClicked(cityName: String){
+    /*fun onStartClicked(cityName: String){
         viewModelScope.launch(Dispatchers.IO) {
             val result = repository.searchWeatherByCityName(cityName)
+            liveDataForWeatherResult.postValue(result)
+        }}*/
+    fun onStartClicked(latitude: Double, longitude: Double) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val result = repository.searchWeatherByCoordinate(latitude, longitude)
             liveDataForWeatherResult.postValue(result)
         }
     }
