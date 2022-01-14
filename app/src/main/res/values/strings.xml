@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Weather Expectancy</string>
+    <string name="temp">%1$s C %2$s</string>
+    <string name="lat_long">latitude: %1$s \n longitude: %2$s</string>
+    <string name="gps_offline">Please enable your location service</string>
+    <string name="gps_unavailable">Please give me location service access</string>
+    <string name="start">Start</string>
 </resources>
